@@ -81,3 +81,10 @@ I ran:
 
 ```bash
 pytest tests/test_streaks.py
+
+
+# Regression Test
+
+I added `tests/test_notifications.py` to verify that rating another user's song creates a `song_rated` notification for the original sharer.
+
+The test creates a song owner, a separate rater, and a song, then calls `rate_song()` and checks that the notification exists and includes the expected song title and rater name. This test would fail if the notification logic were removed or broken in the future.
